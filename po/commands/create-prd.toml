@@ -1,0 +1,18 @@
+# Command to generate a Product Requirements Document (PRD)
+prompt = '''As a Product Owner, I want to create a detailed Product Requirements Document (PRD).
+The PRD should follow this structure:
+1.  **Introduction:** High-level vision, product goals, and purpose.
+2.  **Target Audience:** Descriptions of the primary user personas.
+3.  **Features and Scope:** A list of the major features to be included.
+4.  **User Stories:** A comprehensive list of user stories, grouped under relevant Epics. Each story must be in the format: "As a [persona], I want to [action], so that I can [achieve a benefit]." This is the most critical section.
+5.  **Out of Scope:** A clear list of features that will NOT be included in this version.
+6.  **Success Metrics:** Key metrics to measure the product's success.
+
+The PRD must NOT contain:
+*   Technical implementation details (e.g., database schemas, API designs, specific libraries).
+*   Specific UI/UX designs or wireframes.
+*   Project timelines, release dates, or resource allocation.
+'''
+request = "Please provide a brief description of the product you want to build. What is its purpose and who are the target users?"
+# This would trigger a model call to generate the PRD content.
+# The response would be a markdown document.

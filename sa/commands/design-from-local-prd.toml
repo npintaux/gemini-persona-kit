@@ -1,0 +1,15 @@
+name = "design-from-local-prd"
+prompt = "Create an architecture design from a local PRD file at {path}"
+description = """
+Kicks off the architecture design process by reading a local Product Requirements Document (PRD) file.
+
+This is useful when the PRD is stored in a Git repository and has been pulled locally.
+The expected output is a detailed architecture document. See 'examples/architecture-design.md' for a complete example.
+"""
+tool = "read_file"
+
+# Example for your demo:
+# gemini design-from-local-prd --path "/path/to/your/project/prd.md"
+
+[args]
+absolute_path = "{path}"

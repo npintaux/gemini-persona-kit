@@ -1,0 +1,11 @@
+# Command to import Epics and User Stories from a PRD into Jira.
+prompt = '''As a Product Owner, I want to import the Epics and User Stories from my PRD into a Jira project.
+The tool should:
+1. Parse the provided PRD markdown file.
+2. For each Epic found in the PRD, create a corresponding 'Epic' issue in Jira.
+3. For each User Story found under an Epic, create a corresponding 'Story' issue in Jira.
+4. Link each new 'Story' to its parent 'Epic'.
+'''
+request = "Please provide the path to the PRD file (e.g., 'prd.md') and the Jira Project Key where the issues should be created."
+# This would trigger a tool that reads the markdown file, parses the epics and stories,
+# and then uses the Jira API (e.g., createJiraIssue tool) to create the issues.

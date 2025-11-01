@@ -1,0 +1,14 @@
+name = "design-from-story"
+prompt = "Create an architecture design from a user story located at {source}"
+description = """
+Kicks off the architecture design process by fetching a user story from a source (e.g., a Jira ticket URL, a PRD link).
+
+The expected output of the entire process is a detailed architecture document. See 'examples/architecture-design.md' for a complete example.
+"""
+tool = "web_fetch"
+
+# Example for your demo:
+# gemini design-from-story --source "https://my-jira.com/browse/PROJ-123"
+
+[args]
+prompt = "Fetch the full content of the user story or feature brief from the following URL: {source}"

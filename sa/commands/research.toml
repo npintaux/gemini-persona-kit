@@ -1,0 +1,8 @@
+name = "research"
+prompt = "Research the pros and cons of {technology} for {use_case}"
+tool = "web_fetch"
+
+# Example: gemini research --technology "Kafka" --use_case "real-time data processing"
+
+[args]
+prompt = "Search for articles and blog posts comparing the pros and cons of using {technology} for {use_case}. Summarize the key findings."
