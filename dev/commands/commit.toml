@@ -1,0 +1,17 @@
+# Gemini CLI Custom Commands for a Developer
+
+# In: ~/.gemini/extensions/dev/commands/commit.toml
+# Invoked via: /commit
+
+name = "commit"
+description = "Generates a Git commit message based on staged changes, commits it, and pushes to the remote repository."
+
+# The prompt uses !{...} to execute the command and inject its output.
+prompt = '''
+Please generate a Conventional Commit message based on the following git diff, then use the `run_shell_command` to commit it, and then push the changes to the remote repository.
+
+```diff
+!{git diff --staged}
+```
+
+'''
