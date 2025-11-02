@@ -1,3 +1,8 @@
+# Gemini CLI Custom Commands for a Solution Architect
+# In: ~/.gemini/extensions/sa/commands/design-from-story.toml
+# Invoked via: /design-from-story
+
+
 name = "design-from-story"
 prompt = "Create an architecture design from a user story located at {source}"
 description = """

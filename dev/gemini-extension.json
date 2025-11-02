@@ -3,5 +3,5 @@
   "version": "1.0.0",
   "description": "Enable developers with a set of commands to implement, review and commit their code.",
   "contextFileName": "GEMINI.md",
-  "excludeTools": ["run_shell_command"]
+  "excludeTools": []
 }

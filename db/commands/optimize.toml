@@ -1,6 +1,6 @@
 # Gemini CLI Custom Commands for a Database Engineer
 
-# In: ~/.gemini/extensions/po/commands/optimize.toml
+# In: ~/.gemini/extensions/db/commands/optimize.toml
 # Invoked via: /optimize
 
 name = "optimize"

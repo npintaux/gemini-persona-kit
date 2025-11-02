@@ -1,8 +1,9 @@
+# Gemini CLI Custom Commands for a Solution Architect
+# In: ~/.gemini/extensions/sa/commands/cost-estimate.toml
+# Invoked via: /cost-estimate
+
 name = "cost-estimate"
-prompt = "Estimate the monthly cost for a {instance_type} on {cloud_provider}"
 tool = "web_fetch"
 
-# Example: gemini cost-estimate --instance_type "n2-standard-4" --cloud_provider "GCP"
-
 [args]
-prompt = "Find the official pricing calculator for {cloud_provider} and estimate the monthly cost for a {instance_type} instance."
+prompt = "Use the GCP pricing pages for {instance} and estimate the monthly cost."

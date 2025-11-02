@@ -1,8 +1,11 @@
+# Gemini CLI Custom Commands for a Solution Architect
+# In: ~/.gemini/extensions/sa/commands/list-services.toml
+# Invoked via: /list-services
+
+
 name = "list-services"
 prompt = "List all running services in the {project} project"
 tool = "run_gcloud_command"
-
-# Example: gemini list-services --project "my-gcp-project"
 
 [args]
 args = ["run", "services", "list", "--project", "{project}"]

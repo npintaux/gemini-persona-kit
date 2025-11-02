@@ -1,0 +1,7 @@
+{
+  "name": "qa-extension",
+  "version": "1.0.0",
+  "description": "Enable QA Engineers with a set of commands to test solutions, and manage bugs.",
+  "contextFileName": "GEMINI.md",
+  "excludeTools": []
+}
