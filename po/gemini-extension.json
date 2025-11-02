@@ -1,0 +1,6 @@
+{
+  "name": "po-extension",
+  "version": "1.0.0",
+  "description": "Enable product owners with a set of commands to create PRDs, export stories to Jira, prioritize features, and refine ideas.",
+  "contextFileName": "GEMINI.md"
+}
