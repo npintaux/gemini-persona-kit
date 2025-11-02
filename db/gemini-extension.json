@@ -1,0 +1,7 @@
+{
+  "name": "db-extension",
+  "version": "1.0.0",
+  "description": "Enable Database Engineers with a set of commands to design, implement, manage and optimize databases.",
+  "contextFileName": "GEMINI.md",
+  "excludeTools": []
+}

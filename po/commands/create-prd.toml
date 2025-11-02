@@ -1,3 +1,7 @@
+# Gemini CLI Custom Commands for a Product Owner
+# In: ~/.gemini/extensions/po/commands/create-prd.toml
+# Invoked via: /create-prd
+
 # Command to generate a Product Requirements Document (PRD)
 prompt = '''As a Product Owner, I want to create a detailed Product Requirements Document (PRD).
 The PRD should follow this structure:
