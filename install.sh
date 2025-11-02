@@ -51,6 +51,31 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+# Add a warning and ask for confirmation before removing previous configurations
+echo "⚠️ Warning: Installing a new persona will remove any previously installed persona configurations."
+read -p "Are you sure you want to continue? (y/n): " confirm
+
+case $confirm in
+  [yY]|[yY][eE][sS])
+    # Proceed with deletion
+    # Define all possible persona folders
+    ALL_PERSONA_FOLDERS=("po" "db" "dev" "it" "sa" "qa")
+
+    # Remove previously installed personas
+    echo "Removing previously installed personas from $TARGET_DIR..."
+    for folder in "${ALL_PERSONA_FOLDERS[@]}"; do
+      if [ -d "$TARGET_DIR/$folder" ]; then
+        echo "  - Removing $TARGET_DIR/$folder"
+        rm -rf "$TARGET_DIR/$folder"
+      fi
+    done
+    ;;
+  *)
+    echo "❌ Installation cancelled. Exiting."
+    exit 1
+    ;;
+esac
+
 # 4. Copy the persona files
 echo "Installing files for '$PERSONA_FOLDER' persona..."
 cp -R "$SOURCE_DIR/$PERSONA_FOLDER/" "$TARGET_DIR/$PERSONA_FOLDER/"
