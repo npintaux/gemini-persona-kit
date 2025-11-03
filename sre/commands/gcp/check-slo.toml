@@ -1,0 +1,16 @@
+# In: ~/.gemini/extensions/sre/commands/check-slo.toml
+# Invoked via: /check-slo
+# Description: Checks the status of a Service Level Objective (SLO).
+# Parameters:
+#   - name: slo_name
+#     description: The name of the SLO to check.
+#     type: string
+#   - name: time_window
+#     description: The time window to check the SLO against (e.g., 1h, 24h, 7d).
+#     type: string
+#     default: "24h"
+prompt = """
+Check the status of the SLO named '{{slo_name}}' for the last '{{time_window}}'.
+Provide the current SLO percentage, the remaining error budget, and any recent alerts related to this SLO.
+Use the monitoring tool's command-line interface or API to get this information.
+"""

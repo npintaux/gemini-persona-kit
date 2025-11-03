@@ -6,39 +6,50 @@
 TARGET_DIR="$HOME/.gemini/extensions"
 SOURCE_DIR=$(pwd) # Assumes the script is run from the repo root
 
-# 1. Ask the user which persona they want to install
-echo "🤖 Welcome to the Gemini Persona Onboarding!"
-echo "Which persona would you like to install?"
-echo "  1) Product Owner (po)"
-echo "  2) Database Engineer (db)"
-echo "  3) Developer (dev)"
-echo "  4) IT Engineer (it)"
-echo "  5) Solution Architect (sa)"
-echo "  6) QA Engineer (qa)"
-read -p "Enter the number (1-6): " choice
+PERSONA_ARG=$1
+
+# If a persona is passed as an argument, use it. Otherwise, ask the user.
+if [ -z "$PERSONA_ARG" ]; then
+  # 1. Ask the user which persona they want to install
+  echo "🤖 Welcome to the Gemini Persona Onboarding!"
+  echo "Which persona would you like to install?"
+  echo "  1) Product Owner (po)"
+  echo "  2) Solution Architect (sa)"
+  echo "  3) Developer (dev)"
+  echo "  4) IT Engineer (it)"
+  echo "  5) Database Engineer (db)"
+  echo "  6) QA Engineer (qa)"
+  echo "  7) Site Reliability Engineer (sre)"
+  read -p "Enter the number (1-7) or abbreviation: " choice
+else
+  choice=$PERSONA_ARG
+fi
 
 # 2. Set the persona folder based on the choice
 case $choice in
-  1)
+  1|po)
     PERSONA_FOLDER="po"
     ;;
-  2)
-    PERSONA_FOLDER="db"
-    ;;
-  3)
-    PERSONA_FOLDER="dev"
-    ;;
-  4)
-    PERSONA_FOLDER="it"
-    ;;
-  5)
+  2|sa)
     PERSONA_FOLDER="sa"
     ;;
-  6)
+  3|dev)
+    PERSONA_FOLDER="dev"
+    ;;
+  4|it)
+    PERSONA_FOLDER="it"
+    ;;
+  5|db)
+    PERSONA_FOLDER="db"
+    ;;
+  6|qa)
     PERSONA_FOLDER="qa"
     ;;
+  7|sre)
+    PERSONA_FOLDER="sre"
+    ;;
   *)
-    echo "❌ Invalid choice. Exiting."
+    echo "❌ Invalid choice: '$choice'. Please use a number or abbreviation (e.g., '1' or 'po')."
     exit 1
     ;;
 esac
@@ -52,14 +63,19 @@ if [ $? -ne 0 ]; then
 fi
 
 # Add a warning and ask for confirmation before removing previous configurations
-echo "⚠️ Warning: Installing a new persona will remove any previously installed persona configurations."
-read -p "Are you sure you want to continue? (y/n): " confirm
+if [ -z "$PERSONA_ARG" ]; then
+    echo "⚠️ Warning: Installing a new persona will remove any previously installed persona configurations."
+    read -p "Are you sure you want to continue? (y/n): " confirm
+else
+    # Auto-confirm if persona was passed as an argument
+    confirm="y"
+fi
 
 case $confirm in
   [yY]|[yY][eE][sS])
     # Proceed with deletion
     # Define all possible persona folders
-    ALL_PERSONA_FOLDERS=("po" "db" "dev" "it" "sa" "qa")
+    ALL_PERSONA_FOLDERS=("po" "sa" "dev" "it" "db" "qa" "sre")
 
     # Remove previously installed personas
     echo "Removing previously installed personas from $TARGET_DIR..."

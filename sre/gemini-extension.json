@@ -1,0 +1,6 @@
+{
+  "name": "sre-extension",
+  "version": "1.0.0",
+  "description": "Enable Site Reliability Engineers with a set of commands to check SLOs, health of specific systems, and manage incidents.",
+  "contextFileName": "GEMINI.md"
+}

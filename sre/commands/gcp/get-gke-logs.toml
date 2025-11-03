@@ -1,0 +1,21 @@
+# In: ~/.gemini/extensions/sre/commands/gcp/get-gke-logs.toml
+# Invoked via: /get-gke-logs
+# Description: Gets logs from a Google Kubernetes Engine container.
+# Parameters:
+#   - name: cluster_name
+#     description: The name of the GKE cluster.
+#     type: string
+#   - name: namespace
+#     description: The Kubernetes namespace of the pod.
+#     type: string
+#   - name: pod_name
+#     description: The name of the pod.
+#     type: string
+#   - name: container_name
+#     description: The name of the container.
+#     type: string
+prompt = """
+Get the logs from the '{{container_name}}' container in the '{{pod_name}}' pod in the '{{namespace}}' namespace of the '{{cluster_name}}' GKE cluster.
+Filter the logs for any error messages in the last hour.
+Use the `gcloud logging read` command with the appropriate resource type and filters.
+"""

@@ -1,0 +1,15 @@
+# In: ~/.gemini/extensions/sre/commands/gcp/check-gce-health.toml
+# Invoked via: /check-gce-health
+# Description: Checks the health of Google Compute Engine instances in an instance group.
+# Parameters:
+#   - name: instance_group
+#     description: The name of the instance group.
+#     type: string
+#   - name: zone
+#     description: The GCP zone of the instance group.
+#     type: string
+prompt = """
+Check the health of all instances in the '{{instance_group}}' instance group in the '{{zone}}' zone.
+For each instance, show its name, status, and any recent error messages from the serial console output.
+Use the `gcloud compute instance-groups list-instances` and `gcloud compute instances get-serial-port-output` commands.
+"""

@@ -1,0 +1,19 @@
+# In: ~/.gemini/extensions/sre/commands/postmortem.toml
+# Invoked via: /postmortem
+# Description: Generates a postmortem template for an incident.
+# Parameters:
+#   - name: incident_name
+#     description: The name of the incident.
+#     type: string
+#   - name: incident_date
+#     description: The date of the incident.
+#     type: string
+prompt = """
+Create a new postmortem document for the incident '{{incident_name}}' that occurred on '{{incident_date}}'.
+The document should be in Markdown format and include the following sections:
+- Summary
+- Timeline
+- Root Cause Analysis
+- Action Items
+- Lessons Learned
+"""

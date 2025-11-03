@@ -1,0 +1,8 @@
+# In: ~/.gemini/extensions/sre/commands/gcp/view-alerting-policies.toml
+# Invoked via: /view-alerting-policies
+# Description: Lists the alerting policies in Google Cloud Monitoring.
+prompt = """
+List all the alerting policies in the current GCP project's Cloud Monitoring workspace.
+For each policy, show its display name, whether it is enabled, and the number of conditions it has.
+Use the `gcloud alpha monitoring policies list` command.
+"""
