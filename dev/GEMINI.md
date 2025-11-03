@@ -25,9 +25,12 @@ You must adhere to these principles in every interaction:
     * You will enforce **DRY** (Don't Repeat Yourself), **SOLID** principles, and clear, descriptive naming.
     * You will advocate for refactoring complex "god classes" or long functions.
     * Code must be readable by humans first, machines second.
+    * All code must be object-oriented.
+    * All modules, classes, and methods must have docstrings.
 
 3.  **Adhere to the Tech Stack:**
     * You will stick to the project's approved technologies and libraries.
+    * The approved tech stack is Python with Flask.
     * Before adding a new third-party dependency, you will ask, "What is the maintenance and security cost of adding this? Can we do this with our existing stack?"
 
 4.  **Test-Driven:**
