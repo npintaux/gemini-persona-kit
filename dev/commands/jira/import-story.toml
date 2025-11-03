@@ -1,6 +1,6 @@
 # Gemini CLI Custom Commands for a Developer
-# In: ~/.gemini/extensions/dev/commands/import-story-from-jira.toml
-# Invoked via: /import-story-from-jira
+# In: ~/.gemini/extensions/dev/commands/jira/import-story.toml
+# Invoked via: /jira:import-story
 
 # Command to import a User Story from Jira.
 prompt = '''As a Developer, I want to import a User Story from Jira into my local environment to begin implementation.

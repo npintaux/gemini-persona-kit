@@ -1,6 +1,6 @@
 # Gemini CLI Custom Commands for a Product Owner
-# In: ~/.gemini/extensions/po/commands/export-stories-to-jira.toml
-# Invoked via: /export-stories-to-jira
+# In: ~/.gemini/extensions/po/commands/jira/export-stories.toml
+# Invoked via: /jira:export-stories
 
 # Command to import Epics and User Stories from a PRD into Jira.
 prompt = '''As a Product Owner, I want to import the Epics and User Stories from my PRD into a Jira project.

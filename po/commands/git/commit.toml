@@ -1,7 +1,7 @@
-# Gemini CLI Custom Commands for a Developer
+# Gemini CLI Custom Commands for a Product Owner
 
-# In: ~/.gemini/extensions/dev/commands/commit.toml
-# Invoked via: /commit
+# In: ~/.gemini/extensions/po/commands/git/commit.toml
+# Invoked via: /git:commit
 
 name = "commit"
 description = "Generates a Git commit message based on staged changes, commits it, and pushes to the remote repository."
