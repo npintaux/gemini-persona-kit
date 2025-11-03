@@ -1,0 +1,15 @@
+# Gemini CLI Custom Commands for a Developer
+# In: ~/.gemini/extensions/dev/commands/jira/list-stories.toml
+# Invoked via: /list-stories
+
+name = "list-stories"
+description = "Lists the current stories in a specific JIRA project."
+
+prompt = '''
+As a Developer, I want to see the current open stories for a specific Jira project.
+The tool should:
+1. Ask for the Jira Project Key.
+2. Use the Jira API to find all open issues of type 'Story' for that project.
+3. Display the Issue Key, Summary, and Status for each story.
+'''
+request = "Please provide the Jira Project Key (e.g., 'PROJ')."
