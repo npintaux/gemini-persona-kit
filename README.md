@@ -28,7 +28,7 @@ The PO initiates the process by creating a Product Requirements Document (PRD). 
 
 Once the PRD is finalized, the PO exports one or two user stories to Jira.
 
-*   **Action:** The PO calls the `/export-stories-to-jira` command.
+*   **Action:** The PO calls the `/jira:export-stories` command.
 *   **Output:** The selected user stories are created as issues in Jira.
 
 #### Step 3: Solution Architect (SA) Designs Architecture
@@ -42,7 +42,7 @@ The Solution Architect then takes over, designing the architecture based on the 
 
 The Developer begins by listing the stories in Jira, then implements a specific story, referencing the PRD and architecture documents. Finally, the developer stages and commits the changes.
 
-*   **Action:** The Developer queries Jira using `/jira:list-stories` to get the story number (e.g., SCRUM-11). Then, the developer asks to implement the story using a command like: `/implement SCRUM-11 by referring to @specifications/prd.md and @specifications/architecture.md`. Finally, the developer asks: "can you stage and commit those changes?"
+*   **Action:** The Developer queries Jira using `/jira:list-stories` to get the story number (e.g., SCRUM-11). Then, the developer asks to implement the story using a command like: `/implement SCRUM-11 by referring to @specifications/prd.md and @specifications/architecture.md`. Finally, the developer asks: "can you stage and commit those changes?" (which will trigger the `/git:commit` command).
 *   **Output:** Gemini, as the Developer persona, implements the story and commits the changes.
 
 #### Step 5: IT Engineer (Ops-Bot) Checks Logs
