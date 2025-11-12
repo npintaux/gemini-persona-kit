@@ -16,7 +16,7 @@ if [ -z "$PERSONA_ARG" ]; then
   echo "  1) Product Owner (po)"
   echo "  2) Solution Architect (sa)"
   echo "  3) Developer (dev)"
-  echo "  4) IT Engineer (it)"
+  echo "  4) IT Engineer (devops)"
   echo "  5) Database Engineer (db)"
   echo "  6) QA Engineer (qa)"
   echo "  7) Site Reliability Engineer (sre)"
@@ -37,7 +37,7 @@ case $choice in
     PERSONA_FOLDER="dev"
     ;;
   4|it)
-    PERSONA_FOLDER="it"
+    PERSONA_FOLDER="devops"
     ;;
   5|db)
     PERSONA_FOLDER="db"
@@ -75,7 +75,7 @@ case $confirm in
   [yY]|[yY][eE][sS])
     # Proceed with deletion
     # Define all possible persona folders
-    ALL_PERSONA_FOLDERS=("po" "sa" "dev" "it" "db" "qa" "sre")
+    ALL_PERSONA_FOLDERS=("po" "sa" "dev" "devops" "db" "qa" "sre")
 
     # Remove previously installed personas
     echo "Removing previously installed personas from $TARGET_DIR..."

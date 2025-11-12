@@ -1,0 +1,7 @@
+{
+  "name": "devops-extension",
+  "version": "1.0.0",
+  "description": "Enable DevOps Engineers with a set of commands perform and troubleshoot deployments.",
+  "contextFileName": "GEMINI.md",
+  "excludeTools": []
+}
