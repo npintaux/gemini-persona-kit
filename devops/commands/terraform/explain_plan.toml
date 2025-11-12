@@ -51,7 +51,7 @@ Please structure your response exactly as follows:
 **4. Cost Implications (Inferred)**
 * Based on the resource type changes, infer if costs will likely go UP, DOWN, or stay NEUTRAL. (e.g., "Cost likely UP due to larger instance type").
 
-### Suggestion if the context command fails
+### SUGGESTION (if the context command fails)
 failure_message = "Could not read the plan file. Ensure you have run 'terraform plan -out=tfplan' and that the file exists."
 
 """
