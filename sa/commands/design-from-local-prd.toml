@@ -1,10 +1,17 @@
-# Gemini CLI Custom Commands for a Solution Architect
+# Gemini CLI Custom Commands for a Software Architect
 # In: ~/.gemini/extensions/sa/commands/design-from-local-prd.toml
 # Invoked via: /design-from-local-prd
 
 
 name = "design-from-local-prd"
-prompt = "Create an architecture design from a local PRD file at {path}"
+prompt = """
+Create an architecture design from a local PRD file at {path}.
+Follow the recommendations of the Google Cloud Well-Architected Framework (https://docs.cloud.google.com/architecture/framework?hl=fr).
+If relevant data is missing from the PRD, you should highlight them and ask the probing questions.
+Whenever possible, please produce one or several mermaid.live compatible diagram highlighting the different architecture decisions
+in terms of services, data layer, but also network flows between the different components. Use sequence diagrams to highlight the
+time-based processes that need to be implemented.
+"""
 description = """
 Kicks off the architecture design process by reading a local Product Requirements Document (PRD) file.
 

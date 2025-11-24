@@ -1,0 +1,60 @@
+# Gemini CLI Custom Commands for a Software Architect
+# In: ~/.gemini/extensions/sa/commands/gcwaf/validate-prd.toml
+# Invoked via: /gcwaf:validate-prd
+
+
+name = "validate-prd"
+prompt = """
+You are an expert Google Cloud Architect and "Well-Architected" Auditor.
+Your goal is to review the provided Product Requirements Document (PRD) located at {path} for **Coherence**, **Completeness**, and **GCWAF Alignment**.
+
+Analyze the PRD text deeply. Do not just extract; **evaluate**.
+
+### YOUR ANALYSIS LOGIC:
+
+1.  **Coherence Check (Logic Test):**
+  * Does the "Scale" match the "Business Goal"? (e.g., "MVP" goal should not require "Global Multi-Region" scale).
+  * Do the "Timelines" match the "Complexity"?
+  * Are there contradicting requirements? (e.g., "Lowest possible cost" + "Zero downtime").
+
+2.  **GCWAF Pillar Analysis:**
+  * **Security:** If "PII", "Payments", or "Health" are mentioned, verify if Compliance (PCI/HIPAA) and Residency (EU/US) are defined.
+  * **Reliability:** If "Mission Critical" or "Tier 1", verify if RTO/RPO and SLA numbers are defined.
+  * **Performance:** Look for concrete numbers (TPS, Latency ms). "Fast" is not a requirement.
+  * **Cost:** Look for a budget strategy or cost constraints.
+  * **Operations:** Look for support models (24/7, SRE) and team capabilities.
+
+3.  **Gap Identification:**
+   * Identify specific architectural decisions that CANNOT be made because information is missing.
+
+### OUTPUT FORMAT:
+Return your assessment by following the structure below:
+
+1. Executive audit_summary
+A one-sentence assessment of the PRD's readiness.
+
+2. Critical critical_gaps
+A list of the 3-5 most missing items that prevent architectural design. Be specific (e.g., 'Missing RTO/RPO targets for Tier-1 service').
+
+3. Pillar analysis
+For each pillar (Security, Reliability, Performance, Cost, Operational Excellence), provide:
+- a status (OK | WARNING | CRITICAL)
+- the list of findings: a brief analyzis of the proposal and of the missing items, and what confusion this could create for other DevOps roles.
+- the list of recommendations: what to add/change
+
+4. Follow-up questions
+Please provide up to 3 questions that the Software Architect should ask to the Product Owner to provide more details in the PRD.
+"""
+
+description = """
+Helps validate the PRD against the Well-Archited principles for Google Cloud.
+This is helpful for the Software Architect to pre-validate the PRD before starting the Architecture work.
+"""
+
+tool = "read_file"
+
+# Example for your demo:
+# gemini gcwaf:validate-prd --path "/path/to/your/project/prd.md"
+
+[args]
+absolute_path = "{path}"

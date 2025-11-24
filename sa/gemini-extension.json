@@ -1,6 +1,6 @@
 {
   "name": "sa-extension",
   "version": "1.0.0",
-  "description": "Enable solution architects with a set of commands to estimate costs, design architecture, list services, and research technologies.",
+  "description": "Enable software architects with a set of commands to estimate costs, design architecture, list services, and research technologies.",
   "contextFileName": "GEMINI.md"
 }
