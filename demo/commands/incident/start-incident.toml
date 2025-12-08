@@ -1,0 +1,15 @@
+# In: ~/.gemini/extensions/demo/commands/incident/start-incident.toml
+# Invoked via: /incident:start-incident
+# Description: Declares a new incident.
+# Parameters:
+#   - name: severity
+#     description: The severity of the incident (e.g., SEV1, SEV2, SEV3).
+#     type: string
+#   - name: description
+#     description: A brief description of the incident.
+#     type: string
+prompt = """
+Declare a new incident with severity '{{severity}}' and description '{{description}}'.
+Create a new incident channel in Slack named '#incident-{{YYYYMMDD}}-{{description | slugify}}'.
+Page the on-call SRE using PagerDuty with the incident details.
+"""

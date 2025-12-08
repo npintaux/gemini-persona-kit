@@ -1,0 +1,14 @@
+# Gemini CLI Custom Commands for a Developer
+# In: ~/.gemini/extensions/demo/commands/jira/fetch-story.toml
+# Invoked via: /jira:fetch-story
+
+# Command to import a User Story from Jira.
+prompt = '''As a Developer, I want to import a User Story from Jira into my local environment to begin implementation.
+The tool should:
+1. Fetch the details of the specified Jira issue (which should be a 'Story').
+2. Display the story's summary, description, and acceptance criteria in a clear format.
+3. Create a new feature branch named after the Jira issue key (e.g., 'feature/PROJ-123').
+'''
+request = "Please provide the Jira Issue Key for the story you want to import (e.g., 'PROJ-123')."
+# This would trigger a tool that uses the Jira API (e.g., getJiraIssue tool) to fetch the issue details
+# and then uses a local git tool to create a new branch.

@@ -1,0 +1,13 @@
+# Gemini CLI Custom Commands for a Product Owner
+# In: ~/.gemini/extensions/demo/commands/jira/create-story.toml
+# Invoked via: /jira:create-story
+
+# Command to create a new User Story in Jira.
+prompt = '''As a Product Owner, I want to create a new User Story in Jira.
+The tool should:
+1. Create a new 'Story' issue in Jira.
+2. Allow specifying the parent 'Epic' if applicable.
+'''
+request = "Please provide the Jira Project Key, the Story summary, and optionally the parent Epic Key."
+# This would trigger a tool that reads the markdown file, parses the epics and stories,
+# and then uses the Jira API (e.g., createJiraIssue tool) to create the issues.

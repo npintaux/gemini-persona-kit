@@ -1,0 +1,26 @@
+# Gemini CLI Custom Commands for a Software Architect
+# In: ~/.gemini/extensions/demo/commands/architect/design-from-story.toml
+# Invoked via: /architect:design-from-story
+
+
+name = "design-from-story"
+prompt = """
+Create an architecture design from a user story located at {source}.
+Follow the recommendations of the Google Cloud Well-Architected Framework (https://docs.cloud.google.com/architecture/framework?hl=fr).
+If relevant data is missing from the PRD, you should highlight them and ask the probing questions.
+Whenever possible, please produce one or several mermaid.live compatible diagram highlighting the different architecture decisions
+in terms of services, data layer, but also network flows between the different components. Use sequence diagrams to highlight the
+time-based processes that need to be implemented.
+"""
+description = """
+Kicks off the architecture design process by fetching a user story from a source (e.g., a Jira ticket URL, a PRD link).
+
+The expected output of the entire process is a detailed architecture document. See 'examples/architecture-design.md' for a complete example.
+"""
+tool = "web_fetch"
+
+# Example for your demo:
+# gemini design-from-story --source "https://my-jira.com/browse/PROJ-123"
+
+[args]
+prompt = "Fetch the full content of the user story or feature brief from the following URL: {source}"

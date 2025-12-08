@@ -1,0 +1,19 @@
+# Gemini CLI Custom Commands for a DevOps Engineer
+# In: ~/.gemini/extensions/demo/commands/pipeline/create-pipeline.toml
+# Invoked via: /pipeline:create-pipeline
+
+name = "create-pipeline"
+description = "Helps create a cloudbuild.yaml file for a Cloud Build pipeline."
+
+prompt = '''
+You are a DevOps Engineer. Your current task is to create a `cloudbuild.yaml` file.
+
+To do this, you need to understand the application's requirements.
+
+If the information is not included in **{{args}}**, please ask the user for the following information:
+1.  The programming language and framework of the application.
+2.  The name of the service.
+3.  Any specific build steps or dependencies.
+
+Once you have this information, generate a `cloudbuild.yaml` file with the appropriate build steps and use the `write_file` tool to save it.
+'''

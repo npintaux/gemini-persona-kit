@@ -1,0 +1,6 @@
+{
+  "name": "demo-extension",
+  "version": "1.0.0",
+  "description": "Enables the CLI with a set of commands to illustrate the various commands that can be run by each DevOps role.",
+  "contextFileName": "GEMINI.md"
+}

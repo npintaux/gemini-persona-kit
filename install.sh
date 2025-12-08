@@ -20,7 +20,8 @@ if [ -z "$PERSONA_ARG" ]; then
   echo "  5) Database Engineer (db)"
   echo "  6) QA Engineer (qa)"
   echo "  7) Site Reliability Engineer (sre)"
-  read -p "Enter the number (1-7) or abbreviation: " choice
+  echo "  8) Demo (demo)"
+  read -p "Enter the number (1-8) or abbreviation: " choice
 else
   choice=$PERSONA_ARG
 fi
@@ -47,6 +48,9 @@ case $choice in
     ;;
   7|sre)
     PERSONA_FOLDER="sre"
+    ;;
+  8|demo)
+    PERSONA_FOLDER="demo"
     ;;
   *)
     echo "❌ Invalid choice: '$choice'. Please use a number or abbreviation (e.g., '1' or 'po')."
@@ -75,7 +79,7 @@ case $confirm in
   [yY]|[yY][eE][sS])
     # Proceed with deletion
     # Define all possible persona folders
-    ALL_PERSONA_FOLDERS=("po" "sa" "dev" "devops" "db" "qa" "sre")
+    ALL_PERSONA_FOLDERS=("po" "sa" "dev" "devops" "db" "qa" "sre" "demo")
 
     # Remove previously installed personas
     echo "Removing previously installed personas from $TARGET_DIR..."
