@@ -5,12 +5,14 @@
 
 name = "design-from-local-prd"
 prompt = """
-Create an architecture design from a local PRD file at {path}.
-Follow the recommendations of the Google Cloud Well-Architected Framework (https://docs.cloud.google.com/architecture/framework?hl=fr).
+Create an architecture design from a user story located at {source}.
 If relevant data is missing from the PRD, you should highlight them and ask the probing questions.
-Whenever possible, please produce one or several mermaid.live compatible diagram highlighting the different architecture decisions
-in terms of services, data layer, but also network flows between the different components. Use sequence diagrams to highlight the
-time-based processes that need to be implemented.
+Follow the recommendations of the Google Cloud Well-Architected Framework (https://docs.cloud.google.com/architecture/framework?hl=fr). Identify which GCP service must be used, and highlight why they were chosen in the specification.
+By default, the architecture should be based on stateless microservices, and the prime GCP service to host application services should be Cloud Run.
+For data services, managed services such as Cloud SQL or Firestore should be favored.
+If a service needs to be hosted on other types of Google Cloud service, special documentation should be provided.
+Whenever possible, please produce one or several mermaid.live compatible diagram highlighting the different architecture decisions in terms of services, data layer, but also network flows between the different components. Use sequence diagrams to highlight the time-based processes that need to be implemented. All diagrams should be stored in a folder called 'diagrams' in @specifications and should be named with the following nomenclature: [diagram-type] - [short-description].
+The resulting architecture specification should be named 'architecture.md' and placed into @specifications.
 """
 description = """
 Kicks off the architecture design process by reading a local Product Requirements Document (PRD) file.
